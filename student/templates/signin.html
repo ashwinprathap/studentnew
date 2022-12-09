@@ -1,0 +1,43 @@
+{% extends 'mainbase.html' %}
+{% load static %}
+{% block title %}signup{% endblock title %}
+{% block content%}
+<div style=" background-color: azure;
+padding: 50px;
+margin-top:  15%;
+border: 1px dotted black;
+border-radius: 25px;
+margin-right:450px;
+margin-left:450px; display: flex;
+justify-content: center;">
+
+<form method="post">
+  {% csrf_token %}
+  <div>{% for message in messages %}
+    <p style="color: red;">{{message}}</p>
+    {% endfor %}
+  </div>
+
+    <div style="padding-left:40px;">
+      <button type="button" class="btn btn-info" onclick="window.location.href='../signin'">Sign in</button>
+      <button type="button" class="btn btn-info" onclick="window.location.href='../signup'">Sign up</button><br>
+    </div>
+  
+     
+      
+          <div class="row d-block">
+            <div class="col">
+              <input type="email" class="form-control" placeholder="emailid" required>
+            </div>
+        
+            <div class="col" style="padding-top: 15px;">
+              <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+          </div>
+        <div style="padding-top:15px; padding-left:55px">
+      <button type="button" class="btn btn-info"> signin</button>
+        </div>
+        
+  </form>
+</div>
+{% endblock content%}
